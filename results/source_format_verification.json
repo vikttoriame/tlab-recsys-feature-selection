@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "semantics": "AST identical before/after formatting",
+  "files": {
+    "build_features.py": "cc9702a24332fb6a2b411670521d1b6ddd21c2da697f16910b2e806a5244e9bd",
+    "build_queries.py": "7a3373993175076eb0c915e7966865bfc4031475e89a8171351d44659cb6211d",
+    "checks.py": "5cbd5004d0feaaf79756feaefb602db5f0ea4e19b5d473dacc81638384cd5d64",
+    "manual_features.py": "d0484026da194fa277ae46d8035f303638bfdd4292f549ee19b2585cae9d863c",
+    "prepare_train.py": "e78949dd73261b54b2304cb579c9bf4712185c058f1fa1fae1ad6932553e919f",
+    "extract.py": "0e3a665ad611fe199adad251d74cbcb7d61b57a3928e240caec620810171ceae",
+    "encoding.py": "fda447bc3e2699d86f78d70c5f6c35c2ec4e2778fe7a872b92785f2bf2f7e329",
+    "train.py": "3dc1b4dbf378f4bc1dd5a978c6d423e7a06f7d22bd86659217fc875ef7dd60ee",
+    "make_report.py": "290ffbd5f58ca9f9a0864e9f200f949318d1c8b9397e3ed7c68ab9deba48be72",
+    "evaluate.py": "8a3032c4c1a031f63d8387d5b860c8c9acd9df021fd324c1e4c3a2166b5b6b9e",
+    "verify_source.py": "f3a584d815e5c1d0ae574864b256d5d5822a2cdfe853d25a716fd69a271ab299",
+    "candidates.py": "bc089ebd22ccf4906928bebea6a1ca9a8674b94240e6d9957592fb5d28258146",
+    "verify.py": "5e81d6ea71a437fdabaa6c314a59e254ad197e15393e31d98ca4f414d52feade",
+    "core.py": "5e50d10b1d807444138ffaa4e8c07732812873769ce45d876d1f2839d7391249",
+    "feature_library.py": "86cc479c7e1bebcb08683110524b9895826bd52e4e8d629358e2b65b29dde3f4",
+    "package.py": "aee7efbd5a0ec3873b5e9d7a6e94666b76c0c06b2e085a7ec041f35b9cd21ff4",
+    "finish_run.py": "632dc8d3cd7604be08abdd913a5e06286111f1e365756e12cae1bff282fdd4e2",
+    "select_features.py": "d84fbc7ad74e25c867c58b08bd85b0ee9da4a059cd9b97b0b9323c15ee9c1626",
+    "atomic_gzip.py": "5fb792c88fb9ac020368becaf1234dfa49c51b7539b43a7dca7a957cada865a6",
+    "run_pipeline.py": "5e0e38dbfaa20640c5d1e8ceae659479d502dbb5c98e914e3fa2b6f308280363"
+  }
+}

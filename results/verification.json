@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "queries": 10384,
+  "users": 965,
+  "ensemble_and_heuristic_top20_lists": 72688,
+  "individual_ensemble_and_heuristic_rank_lists": 228448,
+  "frozen_files": 103,
+  "model_and_data_hashes_checked": true,
+  "models": 15,
+  "full_source_replay": {
+    "passed": true,
+    "users": 5000,
+    "events": 71429,
+    "source_events_replayed": 42448764,
+    "per_user_counts_and_all_row_hashes_match": true,
+    "scope": "every event and original source row for every selected user, full October",
+    "elapsed_seconds": 112.53621912002563
+  },
+  "validation_selection_recorded": true,
+  "matched_feature_counts": true,
+  "primary_and_random_bootstraps_reproduced": true,
+  "gzip_files_verified": 35
+}

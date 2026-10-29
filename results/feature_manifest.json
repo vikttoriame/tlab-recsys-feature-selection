@@ -1,0 +1,26 @@
+{
+  "splits": {
+    "train": {
+      "queries": 10000,
+      "users": 1720,
+      "covered": 7119,
+      "candidate_coverage": 0.7119,
+      "rows_saved": 291879,
+      "feature_seconds": 118.47392630577087
+    },
+    "validation": {
+      "queries": 3000,
+      "users": 604,
+      "covered": 2210,
+      "candidate_coverage": 0.7366666666666667,
+      "rows_saved": 600000,
+      "feature_seconds": 40.01580619812012
+    }
+  },
+  "numeric_features": 105,
+  "categorical_features": 3,
+  "generated_windows": 112,
+  "generated_combinations": 48,
+  "elapsed_seconds": 160.64013719558716,
+  "test_scored": false
+}

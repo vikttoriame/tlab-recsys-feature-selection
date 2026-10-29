@@ -1,0 +1,143 @@
+{
+  "generated": 160,
+  "reasons": {
+    "constant": {
+      "combinations": 0,
+      "windows": 1
+    },
+    "no_stable_validation_alignment": {
+      "combinations": 23,
+      "windows": 42
+    },
+    "outside_budget": {
+      "combinations": 13,
+      "windows": 57
+    },
+    "selected": {
+      "combinations": 12,
+      "windows": 12
+    }
+  },
+  "selected_features": [
+    {
+      "family": "windows",
+      "feature": "auto_e2_category_view_share",
+      "score": 0.0363665979286758
+    },
+    {
+      "family": "windows",
+      "feature": "auto_e2_price_history_missing",
+      "score": 0.0363665979286758
+    },
+    {
+      "family": "windows",
+      "feature": "auto_e2_abs_price_delta_category_median",
+      "score": 0.0534174573274861
+    },
+    {
+      "family": "windows",
+      "feature": "auto_e5_item_views",
+      "score": 0.0775757176454794
+    },
+    {
+      "family": "windows",
+      "feature": "auto_e5_abs_price_delta_category_median",
+      "score": 0.0391573066331492
+    },
+    {
+      "family": "windows",
+      "feature": "auto_m1_item_views",
+      "score": 0.0494644831082028
+    },
+    {
+      "family": "windows",
+      "feature": "auto_m1_category_view_share",
+      "score": 0.0443311431860226
+    },
+    {
+      "family": "windows",
+      "feature": "auto_m1_price_history_missing",
+      "score": 0.0442579753837681
+    },
+    {
+      "family": "windows",
+      "feature": "auto_m1_abs_price_delta_category_median",
+      "score": 0.0683660873833856
+    },
+    {
+      "family": "windows",
+      "feature": "auto_m5_abs_price_delta_category_median",
+      "score": 0.0465976430374857
+    },
+    {
+      "family": "windows",
+      "feature": "auto_m15_abs_price_delta_category_median",
+      "score": 0.0447999103279777
+    },
+    {
+      "family": "windows",
+      "feature": "auto_m30_abs_price_delta_category_median",
+      "score": 0.0466029206506386
+    },
+    {
+      "family": "combinations",
+      "feature": "auto_cross_w3_price_z_signed",
+      "score": 0.0354398104997875
+    },
+    {
+      "family": "combinations",
+      "feature": "auto_cross_w3_price_z_abs",
+      "score": 0.0141138332851769
+    },
+    {
+      "family": "combinations",
+      "feature": "auto_cross_w3_price_closeness",
+      "score": 0.0331638983845396
+    },
+    {
+      "family": "combinations",
+      "feature": "auto_cross_w3_closeness_x_category_share",
+      "score": 0.0297222648532339
+    },
+    {
+      "family": "combinations",
+      "feature": "auto_cross_w3_signed_price_x_category_share",
+      "score": 0.0307233103911975
+    },
+    {
+      "family": "combinations",
+      "feature": "auto_cross_w10_price_z_abs",
+      "score": 0.01730956025124
+    },
+    {
+      "family": "combinations",
+      "feature": "auto_cross_w10_price_closeness",
+      "score": 0.0398838226993868
+    },
+    {
+      "family": "combinations",
+      "feature": "auto_cross_wall_price_z_abs",
+      "score": 0.0189448962490675
+    },
+    {
+      "family": "combinations",
+      "feature": "auto_cross_wall_price_closeness",
+      "score": 0.0368729758968603
+    },
+    {
+      "family": "combinations",
+      "feature": "auto_cross_w3_price_x_category_share_change",
+      "score": 0.0228462103067067
+    },
+    {
+      "family": "combinations",
+      "feature": "auto_cross_w10_brand_share_change",
+      "score": 0.020307200277968
+    },
+    {
+      "family": "combinations",
+      "feature": "auto_cross_w10_price_x_category_share_change",
+      "score": 0.0176669179373758
+    }
+  ]
+}

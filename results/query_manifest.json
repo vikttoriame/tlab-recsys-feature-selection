@@ -1,0 +1,29 @@
+{
+  "splits": {
+    "train": {
+      "queries": 37704,
+      "users": 2262,
+      "first": "2019-10-02 00:13:50 UTC",
+      "last": "2019-10-20 23:35:26 UTC"
+    },
+    "validation": {
+      "queries": 6982,
+      "users": 753,
+      "first": "2019-10-21 00:03:40 UTC",
+      "last": "2019-10-24 23:59:16 UTC"
+    },
+    "test": {
+      "queries": 10384,
+      "users": 965,
+      "first": "2019-10-25 00:00:08 UTC",
+      "last": "2019-10-30 23:45:03 UTC"
+    }
+  },
+  "ambiguous_targets_excluded": 6,
+  "cross_boundary_labels_excluded": 1478,
+  "short_prefixes_excluded": 3162,
+  "raw_events_preserved": 71429,
+  "raw_users_preserved": 5000,
+  "history_scope": "all known user events across all sessions",
+  "test_outcomes_scored": false
+}

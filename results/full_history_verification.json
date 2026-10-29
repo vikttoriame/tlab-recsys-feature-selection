@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "users": 5000,
+  "events": 71429,
+  "source_events_replayed": 42448764,
+  "per_user_counts_and_all_row_hashes_match": true,
+  "scope": "every event and original source row for every selected user, full October",
+  "elapsed_seconds": 112.53621912002563
+}

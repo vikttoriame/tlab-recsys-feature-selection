@@ -1,0 +1,10 @@
+{
+  "global_popularity": {
+    "ndcg": 0.028149081864989014,
+    "recall": 0.067
+  },
+  "recent_then_category": {
+    "ndcg": 0.4076374563396116,
+    "recall": 0.5303333333333333
+  }
+}

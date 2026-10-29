@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "independent_prefix_target_candidate_feature_examples": 300,
+  "numeric_features": 105,
+  "categorical_features": 3,
+  "generated_features": 160,
+  "whole_user_history_used": true,
+  "bootstrap_query_weighting_checked": true,
+  "test_scored": false
+}
