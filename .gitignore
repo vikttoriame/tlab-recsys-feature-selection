@@ -1,0 +1,16 @@
+# Local Python environment and generated experiment inputs
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.DS_Store
+cache/
+models/
+logs/
+tmp/
+data/*.csv*
+data/catalog_daily/
+*.zip

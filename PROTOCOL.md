@@ -1,0 +1,36 @@
+# Final experiment / 22 October 2026 / before new test outcomes
+
+## Goal
+Task 1 T-Lab: automated construction and selection of features compared with a substantive gradient-boosted manual baseline. Primary comparison is auto_both minus manual, NDCG@20. Positive improvement is not required. The earlier session-sampled pilot is exploratory only and is not merged with final estimates.
+
+## Data and complete user histories
+Public REES46 2019-Oct.csv.gz, all source events October 1-31. Select 5000 users by smallest blake2b64 big-endian(tlab-users-v1|user_id), independent of actions/targets. Retain EVERY event for each selected user, including all source sessions and days. Streaming bottom-k selection is followed by an independent full-source replay verifying per-user counts and canonical row hashes. Catalog statistics use all past source events, identically for all models; sampled users' full histories are retained.
+
+REES46 is chosen for typed events, product/category/brand and prices, allowing interpretable within-category context. KION and Yambda are examples supplied by the task, not used here. No claim of cross-domain generalization or equivalence to impression CTR. No impression negatives, inventory, delivery, filter settings, photographs, true budget or purchase intent are observed.
+
+## Task and time separation
+Predict next strictly later distinct-second VIEW for each user, after at least two past views. All known events of that user across sessions form the prefix. The target is the next view in the user's global stream, not necessarily in the same source session. Different products tied in the next timestamp are ambiguous and excluded. A cutoff includes all user events at that second. No examples after the last known view; the task is conditional on an observed subsequent view.
+
+Train cutoffs October 2-20, targets strictly before October21. Validation cutoffs21-24, targets before25. Test cutoffs25-30, targets before31. October1 supplies initial history;31 is a right guard. Features may use ALL known earlier user events, including past splits; no future or target fields. Query periods with labels crossing boundaries are excluded, while all raw user history remains preserved. Last test period was never scored in preceding pilots.
+
+Label-independent query caps: train10000 and validation3000, smallest blake2b64 hex(final-query-v1|query_id), then chronological ordering. All eligible final test queries are evaluated. This cap samples prediction moments, not stored user histories.
+
+## Candidates and labels
+Daily catalog: products observed strictly before start of UTC day, last known attributes and past cumulative popularity. Retrieve exactly200 unique candidates: up to40 last distinct viewed products known to catalog, up to80 popular in latest view category, global popularity fill. No target injection. Raw candidate price may update from already observed prefix. Unretrieved targets receive zero on the FULL evaluation denominator. Train only covered sampled queries:1 observed next-view positive and40 uniform deterministic negatives from remaining199 (final-negatives-v1|qid); labels mean next-view relevance, not dislike or nonpurchase.
+
+## Manual baseline
+Original73 numeric+3categorical features: user activity/diversity/repeats/time, candidate category/brand/price/popularity/age, direct previous view/cart/purchase and recency, category/brand/price aggregates at3/10events and entire observed history. Add conventional 1day and7day windows,16 numeric features each, to strengthen manual baseline. Total105numeric+3categorical. Price comparisons within category, positive prices for logarithms; explicit missing indicators. Category/brand are categorical, user/item IDs are not numeric features. This is a substantive fixed baseline, not a claim of state-of-the-art tuning.
+
+## Automatic feature construction / VAL selection
+Finite grammar inherited from exploratory pilot:112 window aggregates (2/5/20events;1/5/15/30minutes) and48 cross features. Operations: counts, shares, recencies, within-category log-price summaries/distances and interactions with category/brand/cart signals. No arithmetic on IDs. Human defines grammar; algorithm enumerates and selects. It is not unrestricted formula invention.
+
+Train three manual rankers first. Use mean validation raw scores to obtain within-query softmax residuals. Score each generated feature by alignment with residuals on covered validation queries, require consistent sign across validation dates21-22 vs23-24, use weaker absolute alignment as score. Train data alone supplies median/1%-99% clipping and correlation screening. Exclude constants and near duplicates of manual/selected features (absolute correlation>.995, fixed train row subsample). Choose up to12 stable features per family, deterministic ties by name. Explicit feature selection occurs on validation, never final test. Main auto_both uses both selected families. Two family ablations and a random matched-size, identically deduplicated feature control are secondary. Random bank chosen without quality scores (seed20261022; per-family offsets). No post-test replacement with best row.
+
+## Fits and evaluation
+All five variants, three seeds20261022/23/24. CatBoostRanker QuerySoftMax,261trees,depth6,lr.06,l2=5,SkipTest counters,4threads, no early stopping or test tuning. Fixed hyperparameters inherited from pilot, no additional parameter search. Two fits run concurrently. Primary test metric uses mean RAW scores of3seeds; report seeds individually. Secondary Recall@20, coverage, daily and prespecified prefix groups(category switch,price shift,repeats) and target-seen status for interpretation only. Same candidates, split, query IDs, static features available to all arms; different variant inputs intentionally implement the ablations.
+
+Paired user-cluster bootstrap2000replicates,seed20261022,query-weighted;95%CI for primary difference. Users cluster across all six test dates. Secondary intervals descriptive, overlapping groups, no subgroup-superiority or causal claim. Uncertainty is conditional on fitted models; three seeds describe only some training variation.
+
+Record extraction, feature computation, selection, fit, inference, peak RSS and feature counts. Discuss scaling in events/users/candidates/library size; no claim of measured production throughput. Freeze code/data/models/features/selection before accessing new test performance. Model/feature decisions cannot change after that. Independently reproduce metrics from saved top20 IDs and ranks and verify sampling against full source. Final code/instructions/report must include used AI assistance and distinguish user idea/interpretation from code and computations prepared by ChatGPT/Codex.
+
+Before new test, add two fixed zero-fit secondary sanity baselines: global past popularity; previously viewed first by recency, then last-view-category popularity. The latter score is3+1/(1+log_recency) for viewed candidates, otherwise2*same_category+log_popularity/100. Identical candidates and denominator, no tuning or selection based on these test rows. They assess whether the manual boosted baseline meaningfully improves on simple rules; no extra primary hypothesis.
